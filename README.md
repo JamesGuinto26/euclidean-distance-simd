@@ -79,3 +79,49 @@ The Assembly implementation of the euclidean distance calculation uses NASM synt
 
 The XMM registers are used to perform the floating-point calculations. The Assembly function processes the arrays using a loop and stores each calculated distance in the output array.
 
+## 6. Correctness Testing
+
+Both implementations were tested using the sample input values provided in the project specifications.
+
+### Correctness Test Results
+
+| Index | C Result | ASM Result | Status |
+|---:|---:|---:|---|
+| 0 | 2.500000 | 2.500000 | MATCH |
+| 1 | 1.581139 | 1.581139 | MATCH |
+| 2 | 2.692582 | 2.692582 | MATCH |
+| 3 | 1.802776 | 1.802776 | MATCH |
+
+All four results matched between the C and Assembly implementations, confirming that both implementations produced equivalent results for the sample inputs.
+## 7. Benchmark Methodology
+
+The performance of both implementations was measured using Windows' `QueryPerformanceCounter()` high-resolution timer.
+
+The benchmarking procedure consisted of:
+
+1. Allocating memory for four input arrays and one output array.
+2. Initializing the input arrays with test values.
+3. Performing one warm-up execution before measurement.
+4. Executing each kernel 30 times.
+5. Measuring the execution time of each kernel call.
+6. Calculating the average execution time across the 30 measured executions.
+
+### Tested Vector Sizes
+
+| Vector Size | Number of Elements |
+|---|---:|
+| 2^20 | 1,048,576 |
+| 2^24 | 16,777,216 |
+| 2^28 | 268,435,456 |
+
+Note: The original 2^30 test size requirement was reduced to 2^28 because of the memory limitations of the device used.
+
+## 8. Benchmark Results
+
+The following table presents the measured average execution times.
+
+| Vector Size | C Average (ms) | ASM Average (ms) |
+|---|---:|---:|
+| 2^20 | 4.208837 | 2.391190 |
+| 2^24 | 69.205760 | 37.185317 |
+| 2^28 | 1188.621113 | 598.089893 |
