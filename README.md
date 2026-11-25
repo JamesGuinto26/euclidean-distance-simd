@@ -57,3 +57,25 @@ SIMD-Distance-Kernel/
 | `kernel_asm.asm` | Implements the Euclidean distance calculation in x86-64 Assembly and scalar SIMD instructions. |
 | `.slnx` | Visual Studio solution file. |
 | `.vcxproj` | Visual Studio project configuration. |
+
+
+## 5. Implementation
+
+### 5.1 C Implementation
+
+The C implementation uses a loop to process each element of the input arrays. It calculates the differences between the corresponding X and Y coordinates, squares the differences, adds them together, and obtains the square root using the `sqrt()` function from the C math library.
+
+### 5.2 x86-64 Assembly Implementation
+
+The Assembly implementation of the euclidean distance calculation uses NASM syntax and scalar SSE2 instructions for double-precision floating-point calculations.
+
+| Instruction | Purpose |
+|---|---|
+| `MOVSD` | Moves a scalar double-precision value. |
+| `SUBSD` | Subtracts scalar double-precision values. |
+| `MULSD` | Multiplies scalar double-precision values. |
+| `ADDSD` | Adds scalar double-precision values. |
+| `SQRTSD` | Calculates the square root of a scalar value. |
+
+The XMM registers are used to perform the floating-point calculations. The Assembly function processes the arrays using a loop and stores each calculated distance in the output array.
+
