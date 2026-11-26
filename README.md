@@ -79,6 +79,10 @@ The Assembly implementation of the euclidean distance calculation uses NASM synt
 
 The XMM registers are used to perform the floating-point calculations. The Assembly function processes the arrays using a loop and stores each calculated distance in the output array.
 
+### 5.3 CMD Output
+
+![CMD Output](images/output.jpeg)
+
 ## 6. Correctness Testing
 
 Both implementations were tested using the sample input values provided in the project specifications.
@@ -122,6 +126,6 @@ The following table presents the measured average execution times.
 
 | Vector Size | C Average (ms) | ASM Average (ms) |
 |---|---:|---:|
-| 2^20 | 4.208837 | 2.391190 |
-| 2^24 | 69.205760 | 37.185317 |
-| 2^28 | 1188.621113 | 598.089893 |
+| 2^20 | 4.153260 | 2.382323 |
+| 2^24 | 67.411227 | 37.502963 |
+| 2^28 | 1605.858093 | 646.661483 |
