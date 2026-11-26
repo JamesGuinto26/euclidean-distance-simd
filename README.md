@@ -129,3 +129,39 @@ The following table presents the measured average execution times.
 | 2^20 | 4.153260 | 2.382323 |
 | 2^24 | 67.411227 | 37.502963 |
 | 2^28 | 1605.858093 | 646.661483 |
+
+### 8.1 Performance Comparison
+
+The speedup is calculated by dividing the C execution time by the Assembly execution time.
+
+       Speedup = C Execution Time / ASM Execution Time
+
+The percentage reduction in execution time is calculated using:
+
+       Improvement = [(C Time - ASM Time) / C Time] x 100
+    
+| Vector Size | ASM Speedup | Time Reduction |
+|---|---:|---:|
+| 2^20 | 1.74× | 42.64% |
+| 2^24 | 1.80× | 44.37% |
+| 2^28 | 2.48× | 59.73% |
+
+## 9. Performance Analysis
+
+Based on the benchmark results, the Assembly implementation consistently achieved lower average execution times than the C implementation across all three tested vector sizes.
+
+For the smallest vector size, 2^20, the Assembly implementation achieved a speedup of approximately 1.74 times, reducing execution time by 42.64%. At 2^24, its speedup increased to approximately 1.80 times, with a 44.37% reduction in execution time.
+
+The largest test, 2^28, showed the greatest performance improvement. The Assembly implementation completed the computation in approximately 646.66 milliseconds, compared with 1605.86 milliseconds for C. This resulted in a speedup of approximately 2.48 times and a 59.73% reduction in execution time.
+
+These results indicate that the Assembly implementation performed better across all tested workloads, with a greater performance advantage observed at vector sizes increase. However, the results are specific to the tested computer which in my case uses 16gb of memory, compiler configuration, and execution environment. Therefore, this does not establish that Assembly will always outperform optimized C code as there are various technical configurations and settings where these tests can also be done.
+
+## 10. Conclusion
+
+The project successfully implemented and achieved its objective of calculating the Euclidean distance kernel in both C and x86-64 Assembly using NASM.
+
+Correctness testing confirmed that both implementations generated matching results for all four sample inputs, demonstrating that the Assembly implementation correctly performed the same computation as the C implementation.
+
+Performance benchmarking showed that the Assembly implementation achieved lower average execution times across all three tested vector sizes. Its greatest measured improvement occurred at 2^28, where it achieved a speedup of approximately 2.48 times and reduced execution time by 59.73% compared with the C implementation.
+
+Overall, this project demonstrated the application of low-level Assembly instructions in performing mathematical computations and the importance of benchmarking in comparing different implementations of the same algorithm. The results showed that the Assembly implementation delivered better performance across the tested workloads.
