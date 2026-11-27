@@ -18,7 +18,7 @@ distance_kernel_asm:
     jle .done
 
     ; Get the 5th and 6th arguments from the stack
-    mov r10, [rsp + 40]     ; y2
+    mov r10, [rsp + 40]     ; y^2
     mov r11, [rsp + 48]     ; z
 
     xor eax, eax            ; i = 0
@@ -39,7 +39,7 @@ distance_kernel_asm:
     ; Calculate dy squared
     mulsd xmm1, xmm1
 
-    ; Calculate dx² + dy²
+    ; Calculate dx^2 + dy^2
     addsd xmm0, xmm1
 
     ; Calculate square root
