@@ -165,3 +165,8 @@ Correctness testing confirmed that both implementations generated matching resul
 Performance benchmarking showed that the Assembly implementation achieved lower average execution times across all three tested vector sizes. Its greatest measured improvement occurred at 2^28, where it achieved a speedup of approximately 2.48 times and reduced execution time by 59.73% compared with the C implementation.
 
 Overall, this project demonstrated the application of low-level Assembly instructions in performing mathematical computations and the importance of benchmarking in comparing different implementations of the same algorithm. The results showed that the Assembly implementation delivered better performance across the tested workloads.
+
+## 11. Video Demo
+
+[![Watch Demo](images/thumbnail.png)](https://www.youtube.com/watch?v=TDQS-08a-FU)
+Click this thumbnail to access the full video.
